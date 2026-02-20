@@ -3,7 +3,7 @@ import AuthLogo from "@/components/auth/AuthLogo";
 
 export default function DashboardNavbar() {
   return (
-    <header className="flex h-[72px] flex-shrink-0 items-center justify-between border-b border-gray-200 bg-white px-8">
+    <header className="flex h-[82px] flex-shrink-0 items-center justify-between border-b border-gray-200 bg-white px-8">
       <AuthLogo />
       <div className="flex items-center gap-4">
         <Link

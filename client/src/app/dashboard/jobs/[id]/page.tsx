@@ -38,7 +38,7 @@ function OverviewItem({ icon, label, value }: { icon: React.ReactNode; label: st
     <div className="flex flex-col gap-1">
       <span className="text-[#4640DE]">{icon}</span>
       <p className="text-xs text-gray-400">{label}</p>
-      <p className="text-sm font-semibold text-gray-900">{value}</p>
+      <p className="whitespace-nowrap text-sm font-semibold text-gray-900">{value}</p>
     </div>
   );
 }
@@ -119,26 +119,27 @@ export default function JobDetailPage() {
         </div>
 
         {/* Right */}
-        <div className="w-[320px] flex-shrink-0 space-y-4">
+        <div className="min-w-[420px] flex-shrink-0 space-y-4">
           {/* Salary card */}
           <div className="rounded-xl border border-gray-200 p-5">
-            <div className="flex items-start justify-between">
-              <div>
+            <div className="flex items-stretch gap-0">
+              <div className="flex flex-1 flex-col items-center justify-center text-center">
                 <p className="text-sm text-gray-500">Salary (USD)</p>
-                <p className="mt-1 text-2xl font-bold text-[#0BA02C]">{salaryLabel}</p>
+                <p className="mt-1 whitespace-nowrap text-lg font-bold text-[#0BA02C]">{salaryLabel}</p>
                 {job.salaryType && (
                   <p className="mt-0.5 text-xs text-gray-400">{job.salaryType} salary</p>
                 )}
               </div>
-              <div className="text-right">
-                <div className="flex justify-end text-[#4640DE]">
+              <div className="w-px shrink-0 bg-gray-200" />
+              <div className="flex flex-1 flex-col items-center justify-center text-center">
+                <div className="text-[#4640DE]">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     <polyline points="9 22 9 12 15 12 15 22" />
                   </svg>
                 </div>
                 <p className="mt-1 text-xs text-gray-400">Job Location</p>
-                <p className="text-sm font-semibold text-gray-900">{location}</p>
+                <p className="whitespace-nowrap text-sm font-semibold text-gray-900">{location}</p>
               </div>
             </div>
           </div>
@@ -207,16 +208,21 @@ export default function JobDetailPage() {
 
       {/* Delete Job modal */}
       {showDeleteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={() => !deleting && setShowDeleteModal(false)}>
-          <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-lg font-semibold text-gray-900">Delete Job</h3>
-            <p className="mt-2 text-sm text-gray-600">Are you sure you want to delete this job?</p>
-            <div className="mt-6 flex justify-end gap-3">
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 pt-[58px]" onClick={() => !deleting && setShowDeleteModal(false)}>
+          <div
+            className="w-full max-w-[360px] rounded-2xl bg-white px-6 pb-6 pt-5 shadow-xl"
+            style={{ fontFamily: "var(--font-poppins), Poppins, sans-serif" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-xl font-semibold text-[#25324B]">Delete Job</h3>
+            <p className="mt-1.5 text-sm text-gray-500">Are you sure you want to delete this job?</p>
+            <hr className="mt-4 border-gray-200" />
+            <div className="mt-5 flex justify-center gap-3">
               <button
                 type="button"
                 onClick={() => setShowDeleteModal(false)}
                 disabled={deleting}
-                className="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50"
+                className="min-w-[110px] rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 disabled:opacity-50"
               >
                 Cancel
               </button>
@@ -224,7 +230,7 @@ export default function JobDetailPage() {
                 type="button"
                 onClick={handleDeleteConfirm}
                 disabled={deleting}
-                className="rounded-lg bg-red-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
+                className="min-w-[110px] rounded-full bg-[#E8452E] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#d63d27] disabled:opacity-50"
               >
                 {deleting ? "Deleting…" : "Delete"}
               </button>
