@@ -1,5 +1,5 @@
 export const selectClass =
-  "w-full appearance-none rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-[#4640DE] focus:outline-none focus:ring-1 focus:ring-[#4640DE]";
+  "w-full appearance-none rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm focus:border-[#4640DE] focus:outline-none focus:ring-1 focus:ring-[#4640DE]";
 export const inputClass =
   "w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-300 focus:border-[#4640DE] focus:outline-none focus:ring-1 focus:ring-[#4640DE]";
 export const labelClass = "mb-1.5 block text-sm text-gray-500";
@@ -35,7 +35,7 @@ export function SelectField({
       <label htmlFor={id} className={labelClass}>{label}</label>
       <select
         id={id}
-        className={selectClass}
+        className={`${selectClass} ${value === "" ? "text-gray-400" : "text-gray-900"}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >
@@ -65,7 +65,7 @@ export function DateField({
       <input
         id={id}
         type="date"
-        className={inputClass}
+        className={`${inputClass} ${value === "" ? "!text-gray-400" : ""}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

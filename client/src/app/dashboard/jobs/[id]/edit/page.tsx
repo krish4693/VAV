@@ -143,7 +143,7 @@ export default function EditJobPage() {
           </div>
           <div>
             <label htmlFor="tags" className={labelClass}>Tags</label>
-            <input id="tags" type="text" className={inputClass} placeholder="e.g. React, Node" value={form.tags} onChange={(e) => update("tags", e.target.value)} />
+            <input id="tags" type="text" className={inputClass} value={form.tags} onChange={(e) => update("tags", e.target.value)} />
           </div>
           <SelectField label="Job Role" id="jobRole" options={JOB_ROLES} value={form.jobRole} onChange={(v) => update("jobRole", v)} />
         </div>
