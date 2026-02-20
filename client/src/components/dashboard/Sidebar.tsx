@@ -40,7 +40,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="flex h-screen w-[220px] flex-shrink-0 flex-col border-r border-gray-200 bg-white">
+    <aside className="flex h-full min-h-0 w-[220px] flex-shrink-0 flex-col border-r border-gray-200 bg-white">
       <div className="px-5 pt-8 pb-4">
         <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400">
           Employers Dashboard
