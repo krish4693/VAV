@@ -38,7 +38,7 @@ function OverviewItem({ icon, label, value }: { icon: React.ReactNode; label: st
     <div className="flex flex-col gap-1">
       <span className="text-[#4640DE]">{icon}</span>
       <p className="text-xs text-gray-400">{label}</p>
-      <p className="whitespace-nowrap text-sm font-semibold text-gray-900">{value}</p>
+      <p className="whitespace-nowrap text-sm font-normal text-gray-900">{value}</p>
     </div>
   );
 }

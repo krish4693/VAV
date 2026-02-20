@@ -86,14 +86,14 @@ export default function PostJobPage() {
               <label htmlFor="minSalary" className={labelClass}>Min Salary</label>
               <div className="flex overflow-hidden rounded-md border border-gray-300 focus-within:border-[#4640DE] focus-within:ring-1 focus-within:ring-[#4640DE]">
                 <input id="minSalary" type="number" className="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-300 focus:outline-none" value={form.minSalary} onChange={(e) => update("minSalary", e.target.value)} />
-                <span className="flex items-center bg-white pr-3 text-sm font-medium text-gray-400">USD</span>
+                <span className="flex items-center border-l border-gray-300 bg-gray-100 px-3 py-2.5 text-sm font-medium text-gray-500">USD</span>
               </div>
             </div>
             <div>
               <label htmlFor="maxSalary" className={labelClass}>Max Salary</label>
               <div className="flex overflow-hidden rounded-md border border-gray-300 focus-within:border-[#4640DE] focus-within:ring-1 focus-within:ring-[#4640DE]">
                 <input id="maxSalary" type="number" className="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-300 focus:outline-none" value={form.maxSalary} onChange={(e) => update("maxSalary", e.target.value)} />
-                <span className="flex items-center bg-white pr-3 text-sm font-medium text-gray-400">USD</span>
+                <span className="flex items-center border-l border-gray-300 bg-gray-100 px-3 py-2.5 text-sm font-medium text-gray-500">USD</span>
               </div>
             </div>
             <SelectField label="Salary Type" id="salaryType" options={SALARY_TYPES} value={form.salaryType} onChange={(v) => update("salaryType", v)} />
